@@ -1,0 +1,317 @@
+{
+  "villa-theo": {
+    "title": "Villa Theo",
+    "slug": "villa-theo",
+    "categories": {
+      "-outside-front": {
+        "title": "outside front",
+        "images": [
+          "/images/1.Villa Theo/1. outside front/1.8.webp",
+          "/images/1.Villa Theo/1. outside front/1.81.webp",
+          "/images/1.Villa Theo/1. outside front/1.91.webp"
+        ]
+      },
+      "parking": {
+        "title": "parking",
+        "images": [
+          "/images/1.Villa Theo/2.parking/1.92.webp",
+          "/images/1.Villa Theo/2.parking/1.93.webp",
+          "/images/1.Villa Theo/2.parking/20260425_124110 (3).webp"
+        ]
+      },
+      "kitchen": {
+        "title": "kitchen",
+        "images": [
+          "/images/1.Villa Theo/3.kitchen/2,31.webp",
+          "/images/1.Villa Theo/3.kitchen/2.1.webp",
+          "/images/1.Villa Theo/3.kitchen/2.2.webp",
+          "/images/1.Villa Theo/3.kitchen/2.3.webp",
+          "/images/1.Villa Theo/3.kitchen/outside kitchen.webp"
+        ]
+      },
+      "sitting-and-dinning-room": {
+        "title": "sitting and dinning room",
+        "images": [
+          "/images/1.Villa Theo/4.sitting and dinning room/3.1.webp",
+          "/images/1.Villa Theo/4.sitting and dinning room/3.2.webp",
+          "/images/1.Villa Theo/4.sitting and dinning room/3.3.webp",
+          "/images/1.Villa Theo/4.sitting and dinning room/3.6.webp"
+        ]
+      },
+      "room-with-balcony": {
+        "title": "room with balcony",
+        "images": [
+          "/images/1.Villa Theo/5.room with balcony/4.01.webp",
+          "/images/1.Villa Theo/5.room with balcony/4.2.webp"
+        ]
+      },
+      "-second-room": {
+        "title": "second room",
+        "images": [
+          "/images/1.Villa Theo/6. second room/6.1.webp",
+          "/images/1.Villa Theo/6. second room/6.2.webp"
+        ]
+      },
+      "-third-room": {
+        "title": "third room",
+        "images": [
+          "/images/1.Villa Theo/7. third room/7.1.webp",
+          "/images/1.Villa Theo/7. third room/7.2.webp"
+        ]
+      },
+      "-fourth-room-library": {
+        "title": "fourth room library",
+        "images": [
+          "/images/1.Villa Theo/8. fourth room library/5.1.webp",
+          "/images/1.Villa Theo/8. fourth room library/5.2.webp"
+        ]
+      },
+      "bathroom-one": {
+        "title": "bathroom one",
+        "images": [
+          "/images/1.Villa Theo/9.bathroom one/8.1.webp",
+          "/images/1.Villa Theo/9.bathroom one/8.2.webp"
+        ]
+      },
+      "bathroom-two": {
+        "title": "bathroom two",
+        "images": [
+          "/images/1.Villa Theo/10.bathroom two/9.1.webp",
+          "/images/1.Villa Theo/10.bathroom two/9.2.webp"
+        ]
+      },
+      "outside-back-garden": {
+        "title": "outside back garden",
+        "images": [
+          "/images/1.Villa Theo/11.outside back garden/10.1..webp",
+          "/images/1.Villa Theo/11.outside back garden/10.2.webp",
+          "/images/1.Villa Theo/11.outside back garden/10.3.webp",
+          "/images/1.Villa Theo/11.outside back garden/10.4.webp"
+        ]
+      },
+      "beach": {
+        "title": "beach",
+        "images": [
+          "/images/1.Villa Theo/12.beach/11.1.webp",
+          "/images/1.Villa Theo/12.beach/11.2.webp"
+        ]
+      }
+    },
+    "allImages": [
+      "/images/1.Villa Theo/1. outside front/1.8.webp",
+      "/images/1.Villa Theo/1. outside front/1.81.webp",
+      "/images/1.Villa Theo/1. outside front/1.91.webp",
+      "/images/1.Villa Theo/2.parking/1.92.webp",
+      "/images/1.Villa Theo/2.parking/1.93.webp",
+      "/images/1.Villa Theo/2.parking/20260425_124110 (3).webp",
+      "/images/1.Villa Theo/3.kitchen/2,31.webp",
+      "/images/1.Villa Theo/3.kitchen/2.1.webp",
+      "/images/1.Villa Theo/3.kitchen/2.2.webp",
+      "/images/1.Villa Theo/3.kitchen/2.3.webp",
+      "/images/1.Villa Theo/3.kitchen/outside kitchen.webp",
+      "/images/1.Villa Theo/4.sitting and dinning room/3.1.webp",
+      "/images/1.Villa Theo/4.sitting and dinning room/3.2.webp",
+      "/images/1.Villa Theo/4.sitting and dinning room/3.3.webp",
+      "/images/1.Villa Theo/4.sitting and dinning room/3.6.webp",
+      "/images/1.Villa Theo/5.room with balcony/4.01.webp",
+      "/images/1.Villa Theo/5.room with balcony/4.2.webp",
+      "/images/1.Villa Theo/6. second room/6.1.webp",
+      "/images/1.Villa Theo/6. second room/6.2.webp",
+      "/images/1.Villa Theo/7. third room/7.1.webp",
+      "/images/1.Villa Theo/7. third room/7.2.webp",
+      "/images/1.Villa Theo/8. fourth room library/5.1.webp",
+      "/images/1.Villa Theo/8. fourth room library/5.2.webp",
+      "/images/1.Villa Theo/9.bathroom one/8.1.webp",
+      "/images/1.Villa Theo/9.bathroom one/8.2.webp",
+      "/images/1.Villa Theo/10.bathroom two/9.1.webp",
+      "/images/1.Villa Theo/10.bathroom two/9.2.webp",
+      "/images/1.Villa Theo/11.outside back garden/10.1..webp",
+      "/images/1.Villa Theo/11.outside back garden/10.2.webp",
+      "/images/1.Villa Theo/11.outside back garden/10.3.webp",
+      "/images/1.Villa Theo/11.outside back garden/10.4.webp",
+      "/images/1.Villa Theo/12.beach/11.1.webp",
+      "/images/1.Villa Theo/12.beach/11.2.webp"
+    ]
+  },
+  "theo-two-bedroom-apartment-with-loft": {
+    "title": "Theo Two-Bedroom Apartment with Loft",
+    "slug": "theo-two-bedroom-apartment-with-loft",
+    "categories": {
+      "dinning-area": {
+        "title": "dinning area",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/1.dinning area/20260411_154154 - Copy.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/1.dinning area/IMG-2c0337b36cf611ee81a8e580dd412bdd-V.webp"
+        ]
+      },
+      "kitchen": {
+        "title": "kitchen",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/2.kitchen/IMG_6429.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/2.kitchen/IMG_6431.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/2.kitchen/IMG_6435.webp"
+        ]
+      },
+      "double-room-with-loft": {
+        "title": "double room with loft",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_6387.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_6393.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_6417.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_64121.webp"
+        ]
+      },
+      "double-room": {
+        "title": "double room",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/4.double room/IMG_6463.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/4.double room/IMG_6466.webp"
+        ]
+      },
+      "upstairs": {
+        "title": "upstairs",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/5.upstairs/IMG_6401.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/5.upstairs/IMG_6479.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/5.upstairs/Untitled-1.webp"
+        ]
+      },
+      "bathroom": {
+        "title": "bathroom",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/6.bathroom/IMG_6456.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/6.bathroom/IMG_6458.webp"
+        ]
+      },
+      "balcony-and-view": {
+        "title": "balcony and view",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/20260411_154154.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/entrance main foto1.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/IMG-317c688c66cfe9c92b849cc9116f75bd-V.webp"
+        ]
+      },
+      "parking": {
+        "title": "parking",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/8.parking/IMG-20250615-WA0193.webp"
+        ]
+      },
+      "beach": {
+        "title": "beach",
+        "images": [
+          "/images/2.Theo Two-Bedroom Apartment with Loft/9.beach/529160978.webp",
+          "/images/2.Theo Two-Bedroom Apartment with Loft/9.beach/529161022.webp"
+        ]
+      }
+    },
+    "allImages": [
+      "/images/2.Theo Two-Bedroom Apartment with Loft/1.dinning area/20260411_154154 - Copy.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/1.dinning area/IMG-2c0337b36cf611ee81a8e580dd412bdd-V.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/2.kitchen/IMG_6429.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/2.kitchen/IMG_6431.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/2.kitchen/IMG_6435.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_6387.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_6393.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_6417.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/3.double room with loft/IMG_64121.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/4.double room/IMG_6463.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/4.double room/IMG_6466.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/5.upstairs/IMG_6401.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/5.upstairs/IMG_6479.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/5.upstairs/Untitled-1.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/6.bathroom/IMG_6456.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/6.bathroom/IMG_6458.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/20260411_154154.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/entrance main foto1.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/IMG-317c688c66cfe9c92b849cc9116f75bd-V.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/8.parking/IMG-20250615-WA0193.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/9.beach/529160978.webp",
+      "/images/2.Theo Two-Bedroom Apartment with Loft/9.beach/529161022.webp"
+    ]
+  },
+  "theo-apartment-with-balcony": {
+    "title": "Theo apartment with balcony",
+    "slug": "theo-apartment-with-balcony",
+    "categories": {
+      "bathroom": {
+        "title": "bathroom",
+        "images": [
+          "/images/3.Theo apartment with balcony/1.bathroom/IMG_6257.webp",
+          "/images/3.Theo apartment with balcony/1.bathroom/IMG_6274.webp",
+          "/images/3.Theo apartment with balcony/1.bathroom/IMG_6277.webp"
+        ]
+      },
+      "sitting-room": {
+        "title": "sitting room",
+        "images": [
+          "/images/3.Theo apartment with balcony/2.sitting room/image00015.webp",
+          "/images/3.Theo apartment with balcony/2.sitting room/image00017.webp",
+          "/images/3.Theo apartment with balcony/2.sitting room/image00019.webp",
+          "/images/3.Theo apartment with balcony/2.sitting room/image00026.webp"
+        ]
+      },
+      "kitchen": {
+        "title": "kitchen",
+        "images": [
+          "/images/3.Theo apartment with balcony/3.kitchen/534953751.webp"
+        ]
+      },
+      "balkony": {
+        "title": "balkony",
+        "images": [
+          "/images/3.Theo apartment with balcony/4.balkony/528505789.webp",
+          "/images/3.Theo apartment with balcony/4.balkony/534953750.webp"
+        ]
+      },
+      "bedroom": {
+        "title": "bedroom",
+        "images": [
+          "/images/3.Theo apartment with balcony/5.bedroom/528505736.webp",
+          "/images/3.Theo apartment with balcony/5.bedroom/534953734.webp",
+          "/images/3.Theo apartment with balcony/5.bedroom/534953745.webp"
+        ]
+      },
+      "loft-upstairs": {
+        "title": "loft upstairs",
+        "images": [
+          "/images/3.Theo apartment with balcony/6.loft upstairs/534953721.webp"
+        ]
+      },
+      "parking": {
+        "title": "parking",
+        "images": [
+          "/images/3.Theo apartment with balcony/7.parking/1.93.webp",
+          "/images/3.Theo apartment with balcony/7.parking/IMG-20250615-WA0193.webp"
+        ]
+      },
+      "-beach": {
+        "title": "beach",
+        "images": [
+          "/images/3.Theo apartment with balcony/9. beach/529160978.webp",
+          "/images/3.Theo apartment with balcony/9. beach/529161022.webp"
+        ]
+      }
+    },
+    "allImages": [
+      "/images/3.Theo apartment with balcony/1.bathroom/IMG_6257.webp",
+      "/images/3.Theo apartment with balcony/1.bathroom/IMG_6274.webp",
+      "/images/3.Theo apartment with balcony/1.bathroom/IMG_6277.webp",
+      "/images/3.Theo apartment with balcony/2.sitting room/image00015.webp",
+      "/images/3.Theo apartment with balcony/2.sitting room/image00017.webp",
+      "/images/3.Theo apartment with balcony/2.sitting room/image00019.webp",
+      "/images/3.Theo apartment with balcony/2.sitting room/image00026.webp",
+      "/images/3.Theo apartment with balcony/3.kitchen/534953751.webp",
+      "/images/3.Theo apartment with balcony/4.balkony/528505789.webp",
+      "/images/3.Theo apartment with balcony/4.balkony/534953750.webp",
+      "/images/3.Theo apartment with balcony/5.bedroom/528505736.webp",
+      "/images/3.Theo apartment with balcony/5.bedroom/534953734.webp",
+      "/images/3.Theo apartment with balcony/5.bedroom/534953745.webp",
+      "/images/3.Theo apartment with balcony/6.loft upstairs/534953721.webp",
+      "/images/3.Theo apartment with balcony/7.parking/1.93.webp",
+      "/images/3.Theo apartment with balcony/7.parking/IMG-20250615-WA0193.webp",
+      "/images/3.Theo apartment with balcony/9. beach/529160978.webp",
+      "/images/3.Theo apartment with balcony/9. beach/529161022.webp"
+    ]
+  }
+}
