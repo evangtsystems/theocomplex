@@ -81,7 +81,7 @@ export default function Footer() {
           <h4 style={{ marginBottom: "15px" }}>Contact</h4>
 
           <p>+30 123 456 7890</p>
-          <p>info@corfuescapes.com</p>
+          <p>info@theocomplex.com</p>
           <p>Corfu, Greece</p>
         </div>
       </div>

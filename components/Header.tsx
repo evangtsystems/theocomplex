@@ -15,7 +15,7 @@ export default function Header() {
     <header className="site-header">
       <Link href="/" className="logo">
   <Image
-    src="/images/logo.png"
+    src="/images/logo.webp"
     alt="Corfu Escapes"
     width={190}
     height={70}

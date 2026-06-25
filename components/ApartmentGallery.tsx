@@ -9,11 +9,13 @@ type CategoryData = {
 
 type ApartmentGalleryProps = {
   title: string;
+  heroImage: string;
   categories: Record<string, CategoryData>;
 };
 
 export default function ApartmentGallery({
   title,
+  heroImage,
   categories,
 }: ApartmentGalleryProps) {
   return (
@@ -37,11 +39,31 @@ export default function ApartmentGallery({
               fontSize: "clamp(2.6rem, 6vw, 5rem)",
               fontWeight: 400,
               color: "#1b1b1b",
-              marginBottom: "20px",
+              marginBottom: "35px",
             }}
           >
             {title}
           </h1>
+
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "clamp(360px, 60vw, 620px)",
+              borderRadius: "14px",
+              overflow: "hidden",
+              background: "#ddd",
+            }}
+          >
+            <Image
+              src={heroImage}
+              alt={title}
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
       </section>
 

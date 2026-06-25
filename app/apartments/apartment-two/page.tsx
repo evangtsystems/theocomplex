@@ -12,7 +12,11 @@ export default function ApartmentTwoPage() {
         <Header />
       </div>
 
-      <ApartmentGallery title={villa.title} categories={villa.categories} />
+     <ApartmentGallery
+  title={villa.title}
+  heroImage={villa.heroImage}
+  categories={villa.categories}
+/>
 
       <Footer />
     </>
