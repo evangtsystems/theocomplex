@@ -2,6 +2,7 @@
   "villa-theo": {
     "title": "Villa Theo",
     "slug": "villa-theo",
+     "heroImage": "/images/1.Villa Theo/1. outside front/1.81.webp",
     "categories": {
       "-outside-front": {
         "title": "outside front",
@@ -234,6 +235,7 @@
   "theo-apartment-with-balcony": {
     "title": "Theo apartment with balcony",
     "slug": "theo-apartment-with-balcony",
+    "heroImage": "/images/3.Theo apartment with balcony/9. beach/529160978.webp",
     "categories": {
       "bathroom": {
         "title": "bathroom",

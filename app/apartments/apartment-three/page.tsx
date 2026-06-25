@@ -12,7 +12,9 @@ export default function ApartmentThreePage() {
         <Header />
       </div>
 
-      <ApartmentGallery title={villa.title} categories={villa.categories} />
+      <ApartmentGallery title={villa.title}
+       heroImage={villa.heroImage}
+       categories={villa.categories} />
 
       <Footer />
     </>
