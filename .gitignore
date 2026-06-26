@@ -59,8 +59,12 @@ water_beautify.py
 water_beautify_results/
 water_beautify_tests/
 
+/public/videos/theo-complex-film.mp4
+/public/images/1.Villa Theo/*.mp4
+
 # Videos
-*.mp4
+*.
 *.mov
 *.avi
 *.mkv
+

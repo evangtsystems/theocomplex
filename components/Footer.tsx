@@ -36,7 +36,7 @@ export default function Footer() {
       >
         <div>
           <Image
-  src="/images/logo.png"
+  src="/images/logo.webp"
   alt="Corfu Escapes"
   width={180}
   height={70}
@@ -80,7 +80,7 @@ export default function Footer() {
         <div>
           <h4 style={{ marginBottom: "15px" }}>Contact</h4>
 
-          <p>+30 123 456 7890</p>
+          <p>+30 6992758885</p>
           <p>info@theocomplex.com</p>
           <p>Corfu, Greece</p>
         </div>
@@ -96,7 +96,7 @@ export default function Footer() {
           textAlign: isMobile ? "center" : "left",
         }}
       >
-        © {new Date().getFullYear()} Corfu Escapes.
+        © {new Date().getFullYear()} THEO COMPLEX.
         All rights reserved.
       </div>
     </footer>
