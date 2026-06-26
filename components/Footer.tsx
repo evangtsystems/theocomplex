@@ -87,18 +87,63 @@ export default function Footer() {
       </div>
 
       <div
+  style={{
+    marginTop: "55px",
+    paddingTop: "28px",
+    borderTop: "1px solid rgba(255,255,255,0.08)",
+    display: "flex",
+    justifyContent: "flex-start",
+    position: "relative",
+    alignItems: "center",
+    flexDirection: isMobile ? "column" : "row",
+    gap: "20px",
+  }}
+>
+  <div
+    style={{
+      fontSize: "0.85rem",
+      opacity: 0.7,
+      textAlign: isMobile ? "center" : "left",
+    }}
+  >
+    © {new Date().getFullYear()} THEO COMPLEX. All rights reserved.
+  </div>
+
+  <div
+  style={{
+    position: isMobile ? "static" : "absolute",
+    left: isMobile ? undefined : "50%",
+    transform: isMobile ? undefined : "translateX(-50%)",
+    textAlign: "center",
+  }}
+>
+    <p
+      style={{
+        margin: "0 0 8px 0",
+        fontSize: "0.72rem",
+        letterSpacing: "2px",
+        color: "rgba(255,255,255,.55)",
+      }}
+    >
+      DESIGNED &amp; HOSTED BY
+    </p>
+
+    <a
+      href="https://gtsystems.gr"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://gtsystems.gr/gtswh.gif"
+        alt="GT Systems"
         style={{
-          marginTop: "50px",
-          borderTop: "1px solid rgba(255,255,255,0.1)",
-          paddingTop: "25px",
-          opacity: 0.7,
-          fontSize: "0.85rem",
-          textAlign: isMobile ? "center" : "left",
+          width: "180px",
+          maxWidth: "100%",
         }}
-      >
-        © {new Date().getFullYear()} THEO COMPLEX.
-        All rights reserved.
-      </div>
+      />
+    </a>
+  </div>
+</div>
     </footer>
   );
 }

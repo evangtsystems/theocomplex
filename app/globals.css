@@ -27,17 +27,20 @@ body {
 
 /* HEADER */
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 999;
   padding: 26px 56px;
   display: grid;
   grid-template-columns: 260px 1fr 180px 40px;
   align-items: center;
   gap: 24px;
   color: white;
+  background: rgba(12, 13, 16, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .logo {
