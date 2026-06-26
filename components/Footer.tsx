@@ -35,11 +35,12 @@ export default function Footer() {
         }}
       >
         <div>
-          <Image
-  src="/images/logo.webp"
+         <Image
+  src="/images/villateo.png"
   alt="Corfu Escapes"
   width={180}
   height={70}
+  className="logo"
   style={{
     width: isMobile ? "150px" : "180px",
     height: "auto",

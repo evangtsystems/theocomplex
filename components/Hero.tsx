@@ -14,7 +14,7 @@ export default function Hero() {
           height: "100vh",
           minHeight: "760px",
           backgroundImage: "url('/images/hero-landscape.png')",
-          backgroundSize: "92%",
+          backgroundSize: "90%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundColor: "#F7F4EF",
@@ -26,8 +26,8 @@ export default function Hero() {
             position: "absolute",
             top: 0,
             bottom: 0,
-            left: "4%",
-            right: "4%",
+            left: "5%",
+            right: "5%",
             background:
               "linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.10) 45%, rgba(0,0,0,0.18) 100%)",
           }}

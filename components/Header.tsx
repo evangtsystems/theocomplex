@@ -13,18 +13,23 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <Link href="/" className="logo">
+     <Link
+  href="/"
+  className="logo"
+  style={{
+    position: "relative",
+    top: "-20px",
+    left: "-40px",
+  }}
+>
   <Image
-    src="/images/logo.webp"
-    alt="Corfu Escapes"
-    width={190}
-    height={70}
-    priority
-    style={{
-      width: "190px",
-      height: "auto",
-    }}
-  />
+  src="/images/villateo.png"
+  alt="Villa Theo"
+  width={300}
+  height={269}
+  priority
+  className="header-logo"
+/>
 </Link>
 
       <nav className="desktop-nav">
