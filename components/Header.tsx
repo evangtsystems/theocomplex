@@ -13,15 +13,7 @@ export default function Header() {
 
   return (
     <header className="site-header">
-     <Link
-  href="/"
-  className="logo"
-  style={{
-    position: "relative",
-    top: "-20px",
-    left: "-40px",
-  }}
->
+    <Link href="/" className="logo">
   <Image
   src="/images/villateo.png"
   alt="Villa Theo"

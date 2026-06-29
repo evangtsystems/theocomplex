@@ -1,33 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Header from "./Header";
+import Image from "next/image";
 
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth <= 900);
+  check();
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
+
   return (
     <>
-      <section
-        style={{
-          position: "relative",
-          height: "100vh",
-          minHeight: "760px",
-          backgroundImage: "url('/images/hero-landscape.png')",
-          backgroundSize: "90%",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundColor: "#F7F4EF",
-          overflow: "hidden",
-        }}
-      >
+     <section
+  style={{
+    position: "relative",
+    height: "100vh",
+    minHeight: "760px",
+    backgroundColor: "#F7F4EF",
+    overflow: "hidden",
+  }}
+>
+ <div
+  style={{
+    position: "absolute",
+    inset: 0,
+    left: isMobile ? 0 : "5%",
+    right: isMobile ? 0 : "5%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  <Image
+    src="/images/hero-landscape.webp"
+    alt="Theo Complex"
+    fill
+    priority
+    quality={75}
+    sizes="100vw"
+    style={{
+      objectFit: "contain",
+      objectPosition: "center",
+    }}
+  />
+
+  </div>
         <div
           style={{
             position: "absolute",
             top: 0,
             bottom: 0,
-            left: "5%",
-            right: "5%",
+           left: isMobile ? 0 : "5.5%",
+right: isMobile ? 0 : "5.5%",
             background:
               "linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.10) 45%, rgba(0,0,0,0.18) 100%)",
           }}
@@ -36,56 +67,68 @@ export default function Hero() {
         <Header />
 
         <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            paddingLeft: "13%",
-            color: "white",
-          }}
-        >
-          <div style={{ maxWidth: "620px" }}>
-            <p
-              style={{
-                fontSize: "0.8rem",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                marginBottom: "18px",
-              }}
-            >
-              Not just a stay.
-            </p>
+  style={{
+    position: "relative",
+    zIndex: 2,
+    height: "100%",
+    display: "flex",
+    alignItems: isMobile ? "flex-start" : "center",
+    justifyContent: isMobile ? "flex-start" : "center",
+    paddingLeft: isMobile ? "8%" : "13%",
+    paddingTop: isMobile ? "120px" : "0",
+    color: "#F6F2EB",
 
-            <h1
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "clamp(3.8rem, 6vw, 6.8rem)",
-                lineHeight: "0.98",
-                fontWeight: 400,
-                margin: 0,
-              }}
-            >
-              An Experience
-              <br />
-              to Remember.
-            </h1>
+  }}
+>
+          <div style={{ maxWidth: "620px", width: "100%" }}>
+  <div>
+    <p
+      style={{
+        fontSize: "0.8rem",
+        letterSpacing: "3px",
+        textTransform: "uppercase",
+        marginBottom: "18px",
+      }}
+    >
+      Not just a stay.
+    </p>
 
-            <p
-              style={{
-                fontSize: "1.25rem",
-                lineHeight: 1.55,
-                marginTop: "28px",
-                marginBottom: "36px",
-              }}
-            >
-              Three unique apartments.
-              <br />
-              Endless memories in Corfu.
-            </p>
+    <h1
+      style={{
+        fontFamily: "Georgia, serif",
+        fontSize: isMobile ? "clamp(3.1rem, 14vw, 4.8rem)" : "clamp(3.8rem, 6vw, 6.8rem)",
+        lineHeight: "0.98",
+        fontWeight: 400,
+        margin: 0,
+color: "#F6F2EB",
+textShadow: "0 4px 18px rgba(0,0,0,.28)",
+      }}
+    >
+      An Experience
+      <br />
+      to Remember.
+    </h1>
+  </div>
 
-            <button
+  <div
+    style={{
+      marginTop: isMobile ? "42vh" : "28px",
+    }}
+  >
+    <p
+      style={{
+        fontSize: "1.25rem",
+        lineHeight: 1.55,
+        marginTop: 0,
+        marginBottom: "36px",
+      }}
+    >
+      Three unique apartments.
+      <br />
+      Endless memories in Corfu.
+    </p>
+
+    <button
               onClick={() => setShowVideo(true)}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "rgba(255,255,255,.18)";
@@ -127,32 +170,34 @@ export default function Hero() {
                 transition: "all .35s ease",
               }}
             >
-              <span
-                style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  border: "1px solid rgba(255,255,255,.75)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "18px",
-                  flexShrink: 0,
-                }}
-              >
-                ▶
-              </span>
+             <span
+  style={{
+    width: "56px",
+    height: "56px",
+    borderRadius: "50%",
+    border: "1px solid rgba(246,242,235,.75)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "18px",
+    flexShrink: 0,
+    color: "#F6F2EB",
+  }}
+>
+  ▶
+</span>
 
               WATCH THE FILM
             </button>
-          </div>
+                    </div>
         </div>
+      </div>
 
-        <div
-          style={{
-            position: "absolute",
-            left: "42px",
-            bottom: "110px",
+      <div
+        style={{
+          position: "absolute",
+          left: "42px",
+          bottom: "90px",
             zIndex: 3,
             color: "white",
             writingMode: "vertical-rl",
