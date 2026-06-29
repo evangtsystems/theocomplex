@@ -52,6 +52,7 @@ body {
   height: 76px;
   display: block;
   margin-left: -110px;
+  top: -60px;
   overflow: visible;
    filter: drop-shadow(0 0 10px rgba(255,255,255,.9))
           drop-shadow(0 0 20px rgba(255,255,255,.6));
