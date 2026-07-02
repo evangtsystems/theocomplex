@@ -7,13 +7,13 @@ const experiences = [
     title: "Life on the Water",
     kicker: "Boat Trips",
     text: "Explore Corfu from the sea. Swim in crystal-clear waters, discover quiet bays, and enjoy the Ionian coastline from a completely different perspective.",
-    image: "/images/boattripl.png",
+    image: "/images/boattripl.webp",
   },
   {
     title: "Authentic Greek Cuisine",
     kicker: "Local Flavours",
     text: "Fresh seafood, traditional dishes, local olive oil and warm Greek hospitality. Corfu is full of flavours that turn simple moments into memories.",
-    image: "/images/rouvelasdish.png",
+    image: "/images/rouvelasdish.webp",
   },
   {
     title: "Hiking Through Nature",
@@ -25,13 +25,13 @@ const experiences = [
     title: "Hidden Beaches & Coves",
     kicker: "Hidden Gems",
     text: "Beyond the famous beaches, Corfu hides peaceful coves, quiet corners and unforgettable views waiting to be discovered.",
-    image: "/images/aigordis.jpg",
+    image: "/images/aigordis.webp",
   },
   {
     title: "Wine, Culture & Sunset Moments",
     kicker: "Island Evenings",
     text: "Golden skies, village walks, local wine and relaxed summer evenings. Some moments in Corfu stay with you long after you leave.",
-    image: "/images/theocomplexwinel.png",
+    image: "/images/theocomplexwinel.webp",
   },
 ];
 

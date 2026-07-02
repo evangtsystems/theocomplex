@@ -1,27 +1,31 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const locations = [
   {
     name: "Villa Theo",
-    lat: "39.4273063",
-    lng: "19.9957696",
+    query: "39.4273063,19.9957696",
+    mapsUrl:
+      "https://www.google.com/maps/place/Villa+Theo/@39.4272638,19.9957461,55m/data=!3m1!1e3!4m15!1m5!3m4!2zMznCsDI1JzM4LjMiTiAxOcKwNTknNDQuOCJF!8m2!3d39.4273063!4d19.9957696!3m8!1s0x135c996a43164677:0x9a589f78910d86dc!5m2!4m1!1i2!8m2!3d39.4273063!4d19.9957696!16s%2Fg%2F11pz6mdz0v",
   },
   {
     name: "Theo Apartment",
-    lat: "39.4272542",
-    lng: "19.9957417",
+    query: "39.4272542,19.9957417",
+    mapsUrl: "https://www.google.com/maps/place/Theo+apartment/@39.4271839,19.9955716,55m/data=!3m1!1e3!4m12!1m5!3m4!2zMznCsDI1JzM4LjEiTiAxOcKwNTknNDQuNyJF!8m2!3d39.4272542!4d19.9957417!3m5!1s0x135c990059471b47:0xf0ed7be58288e600!8m2!3d39.4272542!4d19.9957417!16s%2Fg%2F11y32mdwnk?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     name: "Theo Two-Bedroom Apartment with Loft",
-    lat: "39.4272183",
-    lng: "19.9955022",
+    query: "Theo Two-Bedroom Apartment with Loft, Corfu",
+    mapsUrl:
+      "https://www.google.com/maps/place/Theo+Two-Bedroom+Apartment+with+Loft/@39.4272625,19.9957258,55m/data=!3m1!1e3!4m6!3m5!1s0x135c99007225d3a9:0x5c2578808c806e06!8m2!3d39.4272183!4d19.9955022!16s%2Fg%2F11yv_qpxc1?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
 export default function LocationPage() {
-  const centerLat = "39.4272542";
-  const centerLng = "19.9957417";
+  const [selectedLocation, setSelectedLocation] = useState(locations[0]);
 
   return (
     <>
@@ -74,7 +78,9 @@ export default function LocationPage() {
               }}
             >
               <iframe
-                src={`https://www.google.com/maps?q=${centerLat},${centerLng}&hl=en&z=18&output=embed`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  selectedLocation.query
+                )}&hl=en&z=19&output=embed`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -91,18 +97,26 @@ export default function LocationPage() {
               }}
             >
               {locations.map((location) => (
-                <a
+                <button
                   key={location.name}
-                  href={`https://www.google.com/maps?q=${location.lat},${location.lng}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => {
+                    setSelectedLocation(location);
+                    window.open(
+                      location.mapsUrl,
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }}
                   style={{
-                    background: "white",
+                    background:
+                      selectedLocation.name === location.name ? "#efe6d8" : "white",
                     padding: "26px",
                     borderRadius: "8px",
                     border: "1px solid rgba(0,0,0,0.08)",
-                    textDecoration: "none",
                     color: "#1b1b1b",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    font: "inherit",
                   }}
                 >
                   <h3
@@ -117,9 +131,9 @@ export default function LocationPage() {
                   </h3>
 
                   <p style={{ color: "#555", margin: 0 }}>
-                    Open in Google Maps →
+                    Show on map →
                   </p>
-                </a>
+                </button>
               ))}
             </div>
           </div>
