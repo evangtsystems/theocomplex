@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const experiences = [
-  { title: "Boat Trips", image: "/images/boattrip.png", icon: "⛵" },
-  { title: "Local Cuisine", image: "/images/rouvelasdish.png", icon: "🍽️" },
+  { title: "Boat Trips", image: "/images/boattrip.webp", icon: "⛵" },
+  { title: "Local Cuisine", image: "/images/rouvelasdish.webp", icon: "🍽️" },
   { title: "Hiking Trails", image: "/images/hikingtrails.webp", icon: "⛰️" },
-  { title: "Wine & Culture", image: "/images/theocomplexwine.png", icon: "🍷" },
-  { title: "Hidden Gems", image: "/images/aigordis.jpg", icon: "📍" },
+  { title: "Wine & Culture", image: "/images/theocomplexwine.webp", icon: "🍷" },
+  { title: "Hidden Gems", image: "/images/aigordis.webp", icon: "📍" },
 ];
 
 export default function ExperienceSection() {
