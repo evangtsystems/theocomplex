@@ -46,7 +46,7 @@ export default function ExperiencePage() {
             minHeight: "72vh",
             padding: "170px 8% 90px",
             background:
-              "linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.18)), url('/images/aigordis.jpg')",
+              "linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.18)), url('/images/aigordis.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             color: "white",
