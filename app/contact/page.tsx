@@ -1,6 +1,8 @@
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import ContactForm from "@/components/ContactForm";
 export default function ContactPage() {
   return (
     <>
@@ -107,56 +109,7 @@ export default function ContactPage() {
               boxShadow: "0 15px 40px rgba(0,0,0,0.08)",
             }}
           >
-            <form
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-              }}
-            >
-              <input
-                placeholder="Your Name"
-                style={inputStyle}
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                style={inputStyle}
-              />
-
-              <input
-                placeholder="Subject"
-                style={inputStyle}
-              />
-
-              <textarea
-                placeholder="Your Message"
-                rows={7}
-                style={{
-                  ...inputStyle,
-                  resize: "vertical",
-                }}
-              />
-
-              <button
-                type="submit"
-                style={{
-                  background: "#c9a56a",
-                  color: "white",
-                  border: "none",
-                  padding: "16px",
-                  cursor: "pointer",
-                  fontWeight: 700,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  borderRadius: "5px",
-                  transition: ".25s",
-                }}
-              >
-                Send Message
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>
