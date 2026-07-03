@@ -19,12 +19,26 @@ export default function ApartmentGallery({
   categories,
 }: ApartmentGalleryProps) {
   return (
-    <main style={{ background: "#f7f4ef", minHeight: "100vh" }}>
-      <section style={{ padding: "120px 24px 60px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+    <main
+      style={{
+        background: "#f7f4ef",
+        minHeight: "100vh",
+      }}
+    >
+      <section
+        style={{
+          padding: "120px 24px 60px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+        >
           <p
             style={{
-              fontSize: "0.75rem",
+              fontSize: ".75rem",
               fontWeight: 700,
               letterSpacing: "1.5px",
               textTransform: "uppercase",
@@ -36,7 +50,7 @@ export default function ApartmentGallery({
           <h1
             style={{
               fontFamily: "Georgia, serif",
-              fontSize: "clamp(2.6rem, 6vw, 5rem)",
+              fontSize: "clamp(2.6rem,6vw,5rem)",
               fontWeight: 400,
               color: "#1b1b1b",
               marginBottom: "35px",
@@ -49,10 +63,9 @@ export default function ApartmentGallery({
             style={{
               position: "relative",
               width: "100%",
-              height: "clamp(360px, 60vw, 620px)",
+              height: "clamp(360px,60vw,620px)",
               borderRadius: "14px",
               overflow: "hidden",
-              background: "#ddd",
             }}
           >
             <Image
@@ -60,8 +73,11 @@ export default function ApartmentGallery({
               alt={title}
               fill
               priority
-              sizes="100vw"
-              style={{ objectFit: "cover" }}
+              quality={95}
+              sizes="(max-width:768px) 100vw, 1200px"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         </div>
@@ -71,14 +87,23 @@ export default function ApartmentGallery({
         if (!category.images.length) return null;
 
         return (
-          <section key={key} style={{ padding: "0 24px 70px" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <section
+            key={key}
+            style={{
+              padding: "0 24px 70px",
+            }}
+          >
+            <div
+              style={{
+                maxWidth: "1200px",
+                margin: "0 auto",
+              }}
+            >
               <h2
                 style={{
                   fontFamily: "Georgia, serif",
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+                  fontSize: "clamp(1.8rem,4vw,2.8rem)",
                   fontWeight: 400,
-                  color: "#1b1b1b",
                   marginBottom: "25px",
                 }}
               >
@@ -88,7 +113,8 @@ export default function ApartmentGallery({
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                  gridTemplateColumns:
+                    "repeat(auto-fit,minmax(240px,1fr))",
                   gap: "16px",
                 }}
               >
@@ -98,17 +124,19 @@ export default function ApartmentGallery({
                     style={{
                       position: "relative",
                       height: index === 0 ? "360px" : "260px",
-                      borderRadius: "8px",
                       overflow: "hidden",
-                      background: "#ddd",
+                      borderRadius: "8px",
                     }}
                   >
                     <Image
                       src={src}
-                      alt={`${title} - ${category.title} ${index + 1}`}
+                      alt={`${title} ${category.title} ${index + 1}`}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      style={{ objectFit: "cover" }}
+                      quality={90}
+                      sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 400px"
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                 ))}

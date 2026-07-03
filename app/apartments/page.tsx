@@ -23,7 +23,7 @@ export default function ApartmentsPage() {
     {
       title: imageData["theo-apartment-with-balcony"].title,
       href: "/apartments/apartment-three",
-      image: imageData["theo-apartment-with-balcony"].allImages[0],
+      image: imageData["theo-apartment-with-balcony"].allImages[9],
       description:
         "A charming apartment with balcony, perfect for couples or small families looking for comfort and calm.",
     },
