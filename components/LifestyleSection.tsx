@@ -1,19 +1,19 @@
 const cards = [
   {
     title: "Peaceful Mornings",
-    image: "/images/lifestyle-1.jpg",
+    image: "/uploads/lifestyle/lifestyle-1.webp",
   },
   {
-    title: "Pool Life",
-    image: "/images/lifestyle-2.jpg",
+    title: "Nature Escape",
+    image: "/uploads/lifestyle/lifestyle-2.webp",
   },
   {
     title: "Golden Sunsets",
-    image: "/images/lifestyle-3.jpg",
+    image: "/uploads/lifestyle/lifestyle-3.webp",
   },
   {
     title: "Hidden Beaches",
-    image: "/images/lifestyle-4.jpg",
+    image: "/uploads/lifestyle/lifestyle-4.webp",
   },
 ];
 
