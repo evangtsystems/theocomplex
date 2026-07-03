@@ -45,7 +45,7 @@ export default function AmenitiesLocation() {
         style={{
           display: "grid",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          backgroundImage: "url('/images/marathias-beach.png')",
+          backgroundImage: "url('/images/marathias-beach.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",
@@ -217,7 +217,7 @@ export default function AmenitiesLocation() {
   </div>
 
   <img
-    src="/images/corfu-map.png"
+    src="/images/corfu-map.webp"
     alt="Corfu Map"
     style={{
       width: "100%",
