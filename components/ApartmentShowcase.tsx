@@ -5,21 +5,21 @@ import { useEffect, useState } from "react";
 const apartments = [
   {
     name: "Apartment One",
-    image: "/images/apartment-1.jpg",
+    image: "/images/1.Villa Theo/1. outside front/1.8.webp",
     guests: "Up to 4 Guests",
     description:
       "A peaceful retreat with elegant interiors and beautiful outdoor spaces.",
   },
   {
     name: "Apartment Two",
-    image: "/images/apartment-2.jpg",
+    image: "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/apartment2-1.png",
     guests: "Up to 6 Guests",
     description:
       "Perfect for families seeking comfort, privacy and memorable moments.",
   },
   {
     name: "Apartment Three",
-    image: "/images/apartment-3.jpg",
+    image: "/images/3.Theo apartment with balcony/5.bedroom/apartment3-1.png",
     guests: "Up to 8 Guests",
     description:
       "Spacious luxury accommodation designed for unforgettable holidays.",
