@@ -102,7 +102,7 @@ export default function LifestyleSection() {
               position: "relative",
               borderRadius: "4px",
               overflow: "hidden",
-              backgroundImage: `url('${card.image}')`,
+             backgroundImage: `url('${card.image}?v=${Date.now()}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
