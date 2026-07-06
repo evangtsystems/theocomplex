@@ -21,8 +21,8 @@ useEffect(() => {
      <section
   style={{
     position: "relative",
-    height: "100vh",
-    minHeight: "760px",
+    height: isMobile ? "100svh" : "100vh",
+minHeight: isMobile ? "720px" : "760px",
     backgroundColor: "#F7F4EF",
     overflow: "hidden",
   }}
@@ -96,7 +96,9 @@ right: isMobile ? 0 : "5.5%",
     <h1
       style={{
         fontFamily: "Georgia, serif",
-        fontSize: isMobile ? "clamp(3.1rem, 14vw, 4.8rem)" : "clamp(3.8rem, 6vw, 6.8rem)",
+       fontSize: isMobile
+  ? "clamp(3rem, 11.5vw, 4.2rem)"
+  : "clamp(3.8rem, 6vw, 6.8rem)",
         lineHeight: "0.98",
         fontWeight: 400,
         margin: 0,
@@ -112,7 +114,7 @@ textShadow: "0 4px 18px rgba(0,0,0,.28)",
 
   <div
     style={{
-      marginTop: isMobile ? "42vh" : "28px",
+      marginTop: isMobile ? "36svh" : "28px",
     }}
   >
     <p
