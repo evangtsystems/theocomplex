@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const amenities = [
-  "Swimming Pool",
+  "Nature Escape",
   "Free WiFi",
   "Free Parking",
   "Air Conditioning",

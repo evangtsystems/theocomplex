@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const cards = [
   {
     title: "Peaceful Mornings",
@@ -18,14 +22,23 @@ const cards = [
 ];
 
 export default function LifestyleSection() {
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setMobile(window.innerWidth < 900);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   return (
     <section
       style={{
         background: "#f7f4ef",
-        padding: "70px 8%",
+        padding: mobile ? "60px 24px" : "70px 8%",
         display: "grid",
-        gridTemplateColumns: "260px 1fr",
-        gap: "60px",
+        gridTemplateColumns: mobile ? "1fr" : "260px 1fr",
+        gap: mobile ? "40px" : "60px",
         alignItems: "center",
       }}
     >
@@ -45,7 +58,7 @@ export default function LifestyleSection() {
         <h2
           style={{
             fontFamily: "Georgia, serif",
-            fontSize: "2.7rem",
+            fontSize: mobile ? "2.1rem" : "2.7rem",
             lineHeight: 1.08,
             fontWeight: 400,
             margin: 0,
@@ -75,15 +88,17 @@ export default function LifestyleSection() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "6px",
+          gridTemplateColumns: mobile
+            ? "repeat(2,1fr)"
+            : "repeat(4,1fr)",
+          gap: "8px",
         }}
       >
         {cards.map((card) => (
           <div
             key={card.title}
             style={{
-              height: "360px",
+              height: mobile ? "220px" : "360px",
               position: "relative",
               borderRadius: "4px",
               overflow: "hidden",
@@ -100,6 +115,7 @@ export default function LifestyleSection() {
                   "linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05))",
               }}
             />
+
             <div
               style={{
                 position: "absolute",
@@ -107,7 +123,7 @@ export default function LifestyleSection() {
                 width: "100%",
                 textAlign: "center",
                 color: "white",
-                fontSize: "0.8rem",
+                fontSize: mobile ? "0.72rem" : "0.8rem",
               }}
             >
               {card.title}
