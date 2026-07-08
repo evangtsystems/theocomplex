@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 export default function Footer() {
+  const t = useComponentTranslations("footer");
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -55,36 +57,37 @@ export default function Footer() {
               maxWidth: "320px",
             }}
           >
-            Three unique apartments in the heart of Corfu.
-            Designed for comfort, made for memories.
+           {t.descriptionLine1}
+<br />
+{t.descriptionLine2}
           </p>
         </div>
 
         <div>
-          <h4 style={{ marginBottom: "15px" }}>Quick Links</h4>
+          <h4 style={{ marginBottom: "15px" }}>{t.quickLinks}</h4>
 
-          <p><Link href="/apartments">Apartments</Link></p>
-          <p><Link href="/gallery">Gallery</Link></p>
-          <p><Link href="/location">Location</Link></p>
-          <p><Link href="/contact">Contact</Link></p>
+          <p><Link href="/apartments">{t.apartments}</Link></p>
+          <p><Link href="/gallery">{t.gallery}</Link></p>
+          <p><Link href="/location">{t.location}</Link></p>
+          <p><Link href="/contact">{t.contact}</Link></p>
         </div>
 
         <div>
-          <h4 style={{ marginBottom: "15px" }}>Information</h4>
+          <h4 style={{ marginBottom: "15px" }}>{t.information}</h4>
 
-          <p><Link href="/about">About</Link></p>
-          <p><Link href="/house-rules">House Rules</Link></p>
-          <p><Link href="/privacy-policy">Privacy Policy</Link></p>
-          <p><Link href="/cookies">Cookie Policy</Link></p>
+          <p><Link href="/about">{t.about}</Link></p>
+          <p><Link href="/house-rules">{t.houseRules}</Link></p>
+          <p><Link href="/privacy-policy">{t.privacyPolicy}</Link></p>
+          <p><Link href="/cookies">{t.cookiePolicy}</Link></p>
         </div>
 
         <div>
-          <h4 style={{ marginBottom: "15px" }}>Contact</h4>
+          <h4 style={{ marginBottom: "15px" }}>{t.contact}</h4>
 
           <p>+30 6992758885</p>
            <p>+30 6993113239</p>
           <p>info@theocomplex.com</p>
-          <p>Corfu, Greece</p>
+          <p>{t.corfuGreece}</p>
         </div>
       </div>
 
@@ -108,7 +111,7 @@ export default function Footer() {
       textAlign: isMobile ? "center" : "left",
     }}
   >
-    © {new Date().getFullYear()} THEO COMPLEX. All rights reserved.
+    © {new Date().getFullYear()} {t.allRightsReserved}
   </div>
 
   <div
@@ -127,7 +130,7 @@ export default function Footer() {
         color: "rgba(255,255,255,.55)",
       }}
     >
-      DESIGNED &amp; HOSTED BY
+      {t.designedHostedBy}
     </p>
 
     <a

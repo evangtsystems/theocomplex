@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 const cards = [
   {
@@ -22,6 +23,27 @@ const cards = [
 ];
 
 export default function LifestyleSection() {
+
+  const t = useComponentTranslations("lifestyleSection");
+
+  const cards = [
+  {
+    title: t.peacefulMornings,
+    image: "/uploads/lifestyle/lifestyle-1.webp",
+  },
+  {
+    title: t.natureEscape,
+    image: "/uploads/lifestyle/lifestyle-2.webp",
+  },
+  {
+    title: t.goldenSunsetsCard,
+    image: "/uploads/lifestyle/lifestyle-3.webp",
+  },
+  {
+    title: t.hiddenBeaches,
+    image: "/uploads/lifestyle/lifestyle-4.webp",
+  },
+];
  const [mobile, setMobile] = useState(false);
 const [version, setVersion] = useState("");
 
@@ -55,7 +77,7 @@ useEffect(() => {
             marginBottom: "22px",
           }}
         >
-          The Corfu Feeling
+          {t.theCorfuFeeling}
         </p>
 
         <h2
@@ -68,11 +90,11 @@ useEffect(() => {
             color: "#1b1b1b",
           }}
         >
-          Slow mornings.
+          {t.slowMornings}
           <br />
-          Golden sunsets.
+          {t.goldenSunsets}
           <br />
-          Pure freedom.
+          {t.pureFreedom}
         </h2>
 
         <p
@@ -83,8 +105,7 @@ useEffect(() => {
             fontSize: "0.95rem",
           }}
         >
-          Wake up to the sound of nature, enjoy your coffee with a view and let
-          Corfu’s beauty slow down time.
+          {t.introText}
         </p>
       </div>
 

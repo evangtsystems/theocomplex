@@ -1,16 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
-const experiences = [
-  { title: "Boat Trips", image: "/images/boattrip.webp", icon: "⛵" },
-  { title: "Local Cuisine", image: "/images/rouvelasdish.webp", icon: "🍽️" },
-  { title: "Hiking Trails", image: "/images/hikingtrails.webp", icon: "⛰️" },
-  { title: "Wine & Culture", image: "/images/theocomplexwine.webp", icon: "🍷" },
-  { title: "Hidden Gems", image: "/images/aigordis.webp", icon: "📍" },
-];
 
 export default function ExperienceSection() {
+
+  const t = useComponentTranslations("experienceSection");
+
+
+  const experiences = [
+  { title: t.boatTrips, image: "/images/boattrip.webp", icon: "⛵" },
+  { title: t.localCuisine, image: "/images/rouvelasdish.webp", icon: "🍽️" },
+  { title: t.hikingTrails, image: "/images/hikingtrails.webp", icon: "⛰️" },
+  { title: t.wineAndCulture, image: "/images/theocomplexwine.webp", icon: "🍷" },
+  { title: t.hiddenGems, image: "/images/aigordis.webp", icon: "📍" },
+];
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -43,7 +48,7 @@ export default function ExperienceSection() {
             marginBottom: "22px",
           }}
         >
-          Experience Corfu
+          {t.experienceCorfu}
         </p>
 
         <h2
@@ -56,9 +61,9 @@ export default function ExperienceSection() {
             color: "#1b1b1b",
           }}
         >
-          Beyond
+          {t.beyond}
           <br />
-          the Ordinary
+          {t.theOrdinary}
         </h2>
 
         <p
@@ -70,8 +75,7 @@ export default function ExperienceSection() {
             maxWidth: isMobile ? "100%" : "220px",
           }}
         >
-          From crystal-clear waters to charming villages and authentic flavors,
-          Corfu offers experiences that stay with you forever.
+          {t.introText}
         </p>
 
         <a
@@ -87,7 +91,7 @@ export default function ExperienceSection() {
             letterSpacing: "1.5px",
           }}
         >
-          Explore Experiences →
+          {t.exploreExperiences}
         </a>
       </div>
 

@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 export default function ContactForm() {
+
+  const t = useComponentTranslations("contactForm");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
@@ -47,21 +50,21 @@ export default function ContactForm() {
         gap: "20px",
       }}
     >
-      <input name="name" placeholder="Your Name" required style={inputStyle} />
+      <input name="name" placeholder={t.yourName} required style={inputStyle} />
 
       <input
         name="email"
         type="email"
-        placeholder="Email Address"
+        placeholder={t.emailAddress}
         required
         style={inputStyle}
       />
 
-      <input name="subject" placeholder="Subject" required style={inputStyle} />
+      <input name="subject" placeholder={t.subject} required style={inputStyle} />
 
       <textarea
         name="message"
-        placeholder="Your Message"
+        placeholder={t.yourMessage}
         rows={7}
         required
         style={{
@@ -86,18 +89,18 @@ export default function ContactForm() {
           opacity: status === "loading" ? 0.7 : 1,
         }}
       >
-        {status === "loading" ? "Sending..." : "Send Message"}
+        {status === "loading" ? t.sending : t.sendMessage}
       </button>
 
       {status === "success" && (
         <p style={{ color: "#2f7d32" }}>
-          Thank you. Your message has been sent successfully.
+          {t.successMessage}
         </p>
       )}
 
       {status === "error" && (
         <p style={{ color: "#b00020" }}>
-          Something went wrong. Please try again.
+          {t.errorMessage}
         </p>
       )}
     </form>

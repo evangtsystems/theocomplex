@@ -1,1 +1,27 @@
-{}
+{
+  "amenitiesEyebrow": "AMENITIES",
+  "amenitiesLine1": "Everything You Need",
+  "amenitiesLine2": "for a Perfect Stay",
+  "natureEscape": "Nature Escape",
+  "freeWifi": "Free WiFi",
+  "freeParking": "Free Parking",
+  "airConditioning": "Air Conditioning",
+  "closeToBeach": "Close to Beach",
+  "selfCheckIn": "Self Check-in",
+  "locationEyebrow": "PERFECT LOCATION",
+  "locationLine1": "Close to Everything,",
+  "locationLine2": "Far from Ordinary",
+  "locationText": "Located in peaceful Marathias, Theo Complex places you close to South Corfu’s beaches, local tavernas, Corfu Town and the airport — while still feeling quiet, relaxed and away from the crowds.",
+  "viewLocation": "VIEW LOCATION →",
+  "marathiasBeach": "Marathias Beach",
+  "localTavernas": "Local Tavernas",
+  "lakeKorission": "Lake Korission",
+  "lefkimmiPort": "Lefkimmi Port",
+  "corfuAirport": "Corfu Airport",
+  "corfuTown": "Corfu Town",
+  "threeToFiveMinDrive": "3–5 min drive",
+  "twentyMinDrive": "20 min drive",
+  "twentyToTwentyFiveMinDrive": "20–25 min drive",
+  "fortyToFortyFiveMinDrive": "40–45 min drive",
+  "fortyFiveToFiftyMinDrive": "45–50 min drive"
+}

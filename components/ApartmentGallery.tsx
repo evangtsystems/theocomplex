@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 type CategoryData = {
   title: string;
@@ -18,6 +19,7 @@ export default function ApartmentGallery({
   heroImage,
   categories,
 }: ApartmentGalleryProps) {
+  const t = useComponentTranslations("apartmentGallery");
   return (
     <main
       style={{
@@ -44,7 +46,7 @@ export default function ApartmentGallery({
               textTransform: "uppercase",
             }}
           >
-            Gallery
+            {t.gallery}
           </p>
 
           <h1

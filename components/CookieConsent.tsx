@@ -2,8 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 export default function CookieConsent() {
+
+  const t = useComponentTranslations("cookieConsent");
+
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -48,7 +52,7 @@ export default function CookieConsent() {
           color: "#1b1b1b",
         }}
       >
-        🍪 Cookie Preferences
+        {t.title}
       </h4>
 
       <p
@@ -59,8 +63,7 @@ export default function CookieConsent() {
           marginBottom: "20px",
         }}
       >
-        We use cookies to improve your browsing experience and analyze website
-        traffic.
+        {t.description}
       </p>
 
       <div
@@ -81,7 +84,7 @@ export default function CookieConsent() {
             borderRadius: "4px",
           }}
         >
-          Accept All
+          {t.acceptAll}
         </button>
 
         <button
@@ -95,7 +98,7 @@ export default function CookieConsent() {
             borderRadius: "4px",
           }}
         >
-          Reject
+          {t.reject}
         </button>
 
         <Link
@@ -106,7 +109,7 @@ export default function CookieConsent() {
             color: "#111",
           }}
         >
-          Cookie Policy
+          {t.cookiePolicy}
         </Link>
       </div>
     </div>

@@ -1,1 +1,27 @@
-{}
+{
+  "amenitiesEyebrow": "ΠΑΡΟΧΕΣ",
+  "amenitiesLine1": "Όλα Όσα Χρειάζεστε",
+  "amenitiesLine2": "για μια Ιδανική Διαμονή",
+  "natureEscape": "Απόδραση στη Φύση",
+  "freeWifi": "Δωρεάν WiFi",
+  "freeParking": "Δωρεάν Πάρκινγκ",
+  "airConditioning": "Κλιματισμός",
+  "closeToBeach": "Κοντά στην Παραλία",
+  "selfCheckIn": "Self Check-in",
+  "locationEyebrow": "ΙΔΑΝΙΚΗ ΤΟΠΟΘΕΣΙΑ",
+  "locationLine1": "Κοντά σε Όλα,",
+  "locationLine2": "Μακριά από τα Συνηθισμένα",
+  "locationText": "Στον ήσυχο Μαραθιά, το Theo Complex σάς φέρνει κοντά στις παραλίες της Νότιας Κέρκυρας, σε τοπικές ταβέρνες, στην πόλη της Κέρκυρας και στο αεροδρόμιο — ενώ παραμένει ήρεμο, χαλαρό και μακριά από την πολυκοσμία.",
+  "viewLocation": "ΔΕΙΤΕ ΤΗΝ ΤΟΠΟΘΕΣΙΑ →",
+  "marathiasBeach": "Παραλία Μαραθιά",
+  "localTavernas": "Τοπικές Ταβέρνες",
+  "lakeKorission": "Λίμνη Κορισσίων",
+  "lefkimmiPort": "Λιμάνι Λευκίμμης",
+  "corfuAirport": "Αεροδρόμιο Κέρκυρας",
+  "corfuTown": "Πόλη της Κέρκυρας",
+  "threeToFiveMinDrive": "3–5 λεπτά με αυτοκίνητο",
+  "twentyMinDrive": "20 λεπτά με αυτοκίνητο",
+  "twentyToTwentyFiveMinDrive": "20–25 λεπτά με αυτοκίνητο",
+  "fortyToFortyFiveMinDrive": "40–45 λεπτά με αυτοκίνητο",
+  "fortyFiveToFiftyMinDrive": "45–50 λεπτά με αυτοκίνητο"
+}

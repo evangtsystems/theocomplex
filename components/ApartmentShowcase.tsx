@@ -1,32 +1,34 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
-const apartments = [
-  {
-    name: "Apartment One",
-    image: "/images/1.Villa Theo/1. outside front/1.8.webp",
-    guests: "Up to 4 Guests",
-    description:
-      "A peaceful retreat with elegant interiors and beautiful outdoor spaces.",
-  },
-  {
-    name: "Apartment Two",
-    image: "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/apartment2-1.png",
-    guests: "Up to 6 Guests",
-    description:
-      "Perfect for families seeking comfort, privacy and memorable moments.",
-  },
-  {
-    name: "Apartment Three",
-    image: "/images/3.Theo apartment with balcony/5.bedroom/apartment3-1.png",
-    guests: "Up to 8 Guests",
-    description:
-      "Spacious luxury accommodation designed for unforgettable holidays.",
-  },
-];
+
 
 export default function ApartmentShowcase() {
+
+  const t = useComponentTranslations("apartmentShowcase");
+
+  const apartments = [
+  {
+    name: t.apartmentOneName,
+    image: "/images/1.Villa Theo/1. outside front/1.8.webp",
+    guests: t.apartmentOneGuests,
+    description: t.apartmentOneDescription,
+  },
+  {
+    name: t.apartmentTwoName,
+    image: "/images/2.Theo Two-Bedroom Apartment with Loft/7.balcony and view/apartment2-1.png",
+    guests: t.apartmentTwoGuests,
+    description: t.apartmentTwoDescription,
+  },
+  {
+    name: t.apartmentThreeName,
+    image: "/images/3.Theo apartment with balcony/5.bedroom/apartment3-1.png",
+    guests: t.apartmentThreeGuests,
+    description: t.apartmentThreeDescription,
+  },
+];
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -61,7 +63,7 @@ export default function ApartmentShowcase() {
             marginBottom: "20px",
           }}
         >
-          Our Collection
+          {t.ourCollection}
         </p>
 
         <h2
@@ -74,9 +76,9 @@ export default function ApartmentShowcase() {
             color: "#1b1b1b",
           }}
         >
-          Three Apartments
+          {t.threeApartments}
           <br />
-          Designed For You
+          {t.designedForYou}
         </h2>
 
         <p
@@ -87,8 +89,7 @@ export default function ApartmentShowcase() {
             maxWidth: "550px",
           }}
         >
-          Discover three unique stays carefully designed to offer comfort,
-          elegance and unforgettable moments in Corfu.
+          {t.introText}
         </p>
       </div>
 
@@ -163,7 +164,7 @@ export default function ApartmentShowcase() {
                 textTransform: "uppercase",
               }}
             >
-              Explore Apartment →
+              {t.exploreApartment}
             </a>
           </div>
         ))}

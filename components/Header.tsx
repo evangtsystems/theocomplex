@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLang } from "@/i18n/LanguageProvider";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 export default function Header() {
   const { lang, setLang } = useLang();
+  const t = useComponentTranslations("header");
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -18,22 +20,15 @@ export default function Header() {
   }, []);
 
   const links = [
-    ["Apartments", "/apartments"],
-    ["Experience", "/experience"],
-    ["Location", "/location"],
-    ["Gallery", "/gallery"],
-    ["About", "/about"],
-    ["Contact", "/contact"],
-  ];
+  { label: t.apartments, href: "/apartments" },
+  { label: t.experience, href: "/experience" },
+  { label: t.location, href: "/location" },
+  { label: t.gallery, href: "/gallery" },
+  { label: t.about, href: "/about" },
+  { label: t.contact, href: "/contact" },
+];
 
-  const translatedLabels: Record<string, string> = {
-    Apartments: lang === "el" ? "Διαμερίσματα" : "Apartments",
-    Experience: lang === "el" ? "Εμπειρία" : "Experience",
-    Location: lang === "el" ? "Τοποθεσία" : "Location",
-    Gallery: "Gallery",
-    About: lang === "el" ? "Σχετικά" : "About",
-    Contact: lang === "el" ? "Επικοινωνία" : "Contact",
-  };
+  
 
   return (
     <header className="site-header">
@@ -51,15 +46,15 @@ export default function Header() {
       {!isMobile && (
         <>
           <nav className="desktop-nav">
-            {links.map(([label, href]) => (
-              <Link key={label} href={href}>
-                {translatedLabels[label]}
-              </Link>
-            ))}
+           {links.map((link) => (
+  <Link key={link.href} href={link.href}>
+    {link.label}
+  </Link>
+))}
           </nav>
 
           <Link href="/contact" className="book-btn">
-            {lang === "el" ? "Κράτηση" : "Book Your Stay"}
+           {t.bookYourStay}
           </Link>
 
           <div className="desktop-lang-switcher">
@@ -82,11 +77,15 @@ export default function Header() {
 
       {isMobile && open && (
         <nav className="mobile-nav">
-          {links.map(([label, href]) => (
-            <Link key={label} href={href} onClick={() => setOpen(false)}>
-              {translatedLabels[label]}
-            </Link>
-          ))}
+          {links.map((link) => (
+  <Link
+    key={link.href}
+    href={link.href}
+    onClick={() => setOpen(false)}
+  >
+    {link.label}
+  </Link>
+))}
 
           <div className="mobile-lang-switcher">
             <button onClick={() => setLang("en")}>EN</button>

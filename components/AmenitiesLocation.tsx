@@ -1,26 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
-const amenities = [
-  "Nature Escape",
-  "Free WiFi",
-  "Free Parking",
-  "Air Conditioning",
-  "Close to Beach",
-  "Self Check-in",
+
+
+
+
+export default function AmenitiesLocation() {
+  const t = useComponentTranslations("amenitiesLocation");
+
+  const amenities = [
+  t.natureEscape,
+  t.freeWifi,
+  t.freeParking,
+  t.airConditioning,
+  t.closeToBeach,
+  t.selfCheckIn,
 ];
 
 const distances = [
-  ["Marathias Beach", "3–5 min drive"],
-  ["Local Tavernas", "3–5 min drive"],
-  ["Lake Korission", "20 min drive"],
-  ["Lefkimmi Port", "20–25 min drive"],
-  ["Corfu Airport", "40–45 min drive"],
-  ["Corfu Town", "45–50 min drive"],
+  [t.marathiasBeach, t.threeToFiveMinDrive],
+  [t.localTavernas, t.threeToFiveMinDrive],
+  [t.lakeKorission, t.twentyMinDrive],
+  [t.lefkimmiPort, t.twentyToTwentyFiveMinDrive],
+  [t.corfuAirport, t.fortyToFortyFiveMinDrive],
+  [t.corfuTown, t.fortyFiveToFiftyMinDrive],
 ];
 
-export default function AmenitiesLocation() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -67,7 +74,7 @@ export default function AmenitiesLocation() {
               letterSpacing: "1.5px",
             }}
           >
-            AMENITIES
+            {t.amenitiesEyebrow}
           </p>
 
           <h2
@@ -79,9 +86,9 @@ export default function AmenitiesLocation() {
               marginBottom: "34px",
             }}
           >
-            Everything You Need
-            <br />
-            for a Perfect Stay
+           {t.amenitiesLine1}
+<br />
+{t.amenitiesLine2}
           </h2>
 
           <div
@@ -91,8 +98,8 @@ export default function AmenitiesLocation() {
               gap: isMobile ? "20px 16px" : "22px",
             }}
           >
-            {amenities.map((item) => (
-              <div key={item} style={{ fontSize: "0.88rem", lineHeight: 1.4 }}>
+            {amenities.map((item, index) => (
+  <div key={`${item}-${index}`} style={{ fontSize: "0.88rem", lineHeight: 1.4 }}>
                 <div
                   style={{
                     fontSize: "1.4rem",
@@ -123,7 +130,7 @@ export default function AmenitiesLocation() {
               letterSpacing: "1.5px",
             }}
           >
-            PERFECT LOCATION
+          {t.locationEyebrow}
           </p>
 
           <h2
@@ -134,9 +141,9 @@ export default function AmenitiesLocation() {
               fontWeight: 400,
             }}
           >
-            Close to Everything,
-            <br />
-            Far from Ordinary
+            {t.locationLine1}
+<br />
+{t.locationLine2}
           </h2>
 
           <p
@@ -148,9 +155,7 @@ export default function AmenitiesLocation() {
               color: "rgba(255,255,255,0.9)",
             }}
           >
-            Located in peaceful Marathias, Theo Complex places you close to
-            South Corfu’s beaches, local tavernas, Corfu Town and the airport —
-            while still feeling quiet, relaxed and away from the crowds.
+            {t.locationText}
           </p>
 
           <a
@@ -167,7 +172,7 @@ export default function AmenitiesLocation() {
               paddingBottom: "6px",
             }}
           >
-            VIEW LOCATION →
+            {t.viewLocation}
           </a>
         </div>
       </div>
