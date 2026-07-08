@@ -3,8 +3,11 @@
 import { useState,useEffect } from "react";
 import Header from "./Header";
 import Image from "next/image";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 export default function Hero() {
+
+  const t = useComponentTranslations("hero");
   const [showVideo, setShowVideo] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
@@ -90,7 +93,7 @@ right: isMobile ? 0 : "5.5%",
         marginBottom: "18px",
       }}
     >
-      Not just a stay.
+      {t.notJustAStay}
     </p>
 
     <h1
@@ -106,9 +109,9 @@ color: "#F6F2EB",
 textShadow: "0 4px 18px rgba(0,0,0,.28)",
       }}
     >
-      An Experience
-      <br />
-      to Remember.
+      {t.experienceLine1}
+<br />
+{t.experienceLine2}
     </h1>
   </div>
 
@@ -125,9 +128,9 @@ textShadow: "0 4px 18px rgba(0,0,0,.28)",
         marginBottom: "36px",
       }}
     >
-      Three unique apartments.
-      <br />
-      Endless memories in Corfu.
+     {t.apartmentsLine1}
+<br />
+{t.apartmentsLine2}
     </p>
 
     <button
@@ -189,7 +192,7 @@ textShadow: "0 4px 18px rgba(0,0,0,.28)",
   ▶
 </span>
 
-              WATCH THE FILM
+              {t.watchTheFilm}
             </button>
                     </div>
         </div>
@@ -209,7 +212,7 @@ textShadow: "0 4px 18px rgba(0,0,0,.28)",
             opacity: 0.8,
           }}
         >
-          Scroll
+          {t.scroll}
         </div>
       </section>
 

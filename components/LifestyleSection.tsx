@@ -22,14 +22,17 @@ const cards = [
 ];
 
 export default function LifestyleSection() {
-  const [mobile, setMobile] = useState(false);
+ const [mobile, setMobile] = useState(false);
+const [version, setVersion] = useState("");
 
-  useEffect(() => {
-    const check = () => setMobile(window.innerWidth < 900);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+useEffect(() => {
+  setVersion(String(Date.now()));
+
+  const check = () => setMobile(window.innerWidth < 900);
+  check();
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
 
   return (
     <section
@@ -102,7 +105,7 @@ export default function LifestyleSection() {
               position: "relative",
               borderRadius: "4px",
               overflow: "hidden",
-             backgroundImage: `url('${card.image}?v=${Date.now()}')`,
+            backgroundImage: `url('${card.image}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
