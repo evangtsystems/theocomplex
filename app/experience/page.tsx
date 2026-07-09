@@ -1,6 +1,11 @@
+"use client";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
+
+
+
 
 const experiences = [
   {
@@ -36,6 +41,15 @@ const experiences = [
 ];
 
 export default function ExperiencePage() {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth <= 900);
+  check();
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
   return (
     <>
       <Header />
@@ -44,7 +58,7 @@ export default function ExperiencePage() {
         <section
           style={{
             minHeight: "72vh",
-            padding: "170px 8% 90px",
+            padding: isMobile ? "130px 24px 70px" : "170px 8% 90px",
             background:
               "linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.18)), url('/images/aigordis.webp')",
             backgroundSize: "cover",
@@ -70,7 +84,7 @@ export default function ExperiencePage() {
             <h1
               style={{
                 fontFamily: "Georgia, serif",
-                fontSize: "clamp(3.8rem, 7vw, 7rem)",
+                fontSize: isMobile ? "3.2rem" : "clamp(3.8rem, 7vw, 7rem)",
                 lineHeight: ".95",
                 fontWeight: 400,
                 margin: 0,
@@ -95,7 +109,7 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        <section style={{ padding: "90px 8%" }}>
+        <section style={{ padding: isMobile ? "60px 24px" : "90px 8%" }}>
           {experiences.map((item, index) => {
             const reverse = index % 2 === 1;
 
@@ -104,13 +118,12 @@ export default function ExperiencePage() {
                 key={item.title}
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                  gap: "70px",
-                  alignItems: "center",
-                  marginBottom: "110px",
+                  gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
+gap: isMobile ? "28px" : "70px",
+marginBottom: isMobile ? "70px" : "110px",
                 }}
               >
-                <div style={{ order: reverse ? 2 : 1 }}>
+                <div style={{ order: isMobile ? 1 : reverse ? 2 : 1 }}>
                   <p
                     style={{
                       textTransform: "uppercase",
@@ -151,8 +164,8 @@ export default function ExperiencePage() {
 
                 <div
                   style={{
-                    order: reverse ? 1 : 2,
-                    height: "520px",
+                    order: isMobile ? 2 : reverse ? 1 : 2,
+                    height: isMobile ? "300px" : "520px",
                     borderRadius: "18px",
                     overflow: "hidden",
                     backgroundImage: `url('${item.image}')`,
@@ -168,8 +181,8 @@ export default function ExperiencePage() {
 
         <section
           style={{
-            margin: "0 8% 100px",
-            padding: "80px 8%",
+           margin: isMobile ? "0 24px 70px" : "0 8% 100px",
+padding: isMobile ? "55px 24px" : "80px 8%",
             background: "#11151a",
             color: "white",
             textAlign: "center",

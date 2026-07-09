@@ -64,7 +64,7 @@ export default function AboutPage() {
           >
             <div>
               <img
-                src="/images/logo.png"
+                src="/images/villateo.webp"
                 alt="Theo Apartments"
                 style={{
                   width: "100%",
