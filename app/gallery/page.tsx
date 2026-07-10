@@ -6,22 +6,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import discoverData from "@/public/discoverData.json";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
-const sections = [
-  { title: "Outdoor Living", images: discoverData.outdoor },
-  { title: "Kitchens", images: discoverData.kitchens },
-  { title: "Bedrooms", images: discoverData.bedrooms },
-  { title: "Bathrooms", images: discoverData.bathrooms },
-  { title: "Living Spaces", images: discoverData.livingSpaces },
-  { title: "Nearby Beach", images: discoverData.beach },
-];
+
 
 function ImageGrid({
   images,
   onOpen,
+  imageAlt,
 }: {
   images: string[];
   onOpen: (images: string[], index: number) => void;
+  imageAlt: string;
 }) {
   return (
     <div
@@ -48,7 +44,7 @@ function ImageGrid({
         >
           <Image
             src={src}
-            alt="Theo Collection"
+            alt={imageAlt} 
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             style={{ objectFit: "cover" }}
@@ -60,6 +56,17 @@ function ImageGrid({
 }
 
 export default function GalleryPage() {
+
+  const t = useComponentTranslations("galleryPage");
+
+  const sections = [
+  { title: t.outdoorLiving, images: discoverData.outdoor },
+  { title: t.kitchens, images: discoverData.kitchens },
+  { title: t.bedrooms, images: discoverData.bedrooms },
+  { title: t.bathrooms, images: discoverData.bathrooms },
+  { title: t.livingSpaces, images: discoverData.livingSpaces },
+  { title: t.nearbyBeach, images: discoverData.beach },
+];
   const heroImage = discoverData.featured[0];
 
   const [lightboxImages, setLightboxImages] = useState<string[]>([]);
@@ -95,24 +102,24 @@ export default function GalleryPage() {
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
 
           <div style={{ position: "relative", zIndex: 2, maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
-            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "2px" }}>DISCOVER</p>
+            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "2px" }}> {t.discoverEyebrow}</p>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 400, lineHeight: 1, margin: "20px 0" }}>
-              The Theo Collection
+              {t.heroTitle}
             </h1>
             <p style={{ maxWidth: "560px", lineHeight: 1.8 }}>
-              A curated visual journey through our three unique stays in Corfu.
+              {t.heroText}
             </p>
           </div>
         </section>
 
         <section style={{ padding: "80px 24px" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "1.5px" }}>FEATURED MOMENTS</p>
+            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "1.5px" }}>{t.featuredEyebrow}</p>
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2.2rem, 5vw, 4rem)", fontWeight: 400, color: "#1b1b1b", marginBottom: "35px" }}>
-              Every corner has a story.
+              {t.featuredTitle}
             </h2>
 
-            <ImageGrid images={discoverData.featured.slice(0, 12)} onOpen={open} />
+            <ImageGrid images={discoverData.featured.slice(0, 12)} onOpen={open} imageAlt={t.imageAlt} />
           </div>
         </section>
 
@@ -124,7 +131,7 @@ export default function GalleryPage() {
                   {section.title}
                 </h2>
 
-                <ImageGrid images={section.images} onOpen={open} />
+                <ImageGrid images={section.images} onOpen={open} imageAlt={t.imageAlt} />
               </div>
             </section>
           ) : null
@@ -132,11 +139,11 @@ export default function GalleryPage() {
 
         <section style={{ background: "#0f1216", color: "white", padding: "80px 24px", textAlign: "center" }}>
           <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2.4rem, 6vw, 4.5rem)", fontWeight: 400, marginBottom: "20px" }}>
-            Ready for your Corfu escape?
+            {t.ctaTitle}
           </h2>
 
           <Link href="/contact" style={{ display: "inline-block", marginTop: "20px", background: "#c9a56a", color: "white", padding: "16px 34px", textDecoration: "none", fontWeight: 700, letterSpacing: "1px" }}>
-            BOOK YOUR STAY
+            {t.bookYourStay}
           </Link>
         </section>
       </main>
@@ -166,7 +173,7 @@ export default function GalleryPage() {
           </button>
 
           <div onClick={(e) => e.stopPropagation()} style={{ position: "relative", width: "90vw", height: "80vh" }}>
-            <Image src={lightboxImages[activeIndex]} alt="Theo Collection" fill sizes="90vw" style={{ objectFit: "contain" }} />
+            <Image src={lightboxImages[activeIndex]} alt={t.imageAlt} fill sizes="90vw" style={{ objectFit: "contain" }} />
           </div>
 
           <button onClick={(e) => { e.stopPropagation(); next(); }} style={{ position: "absolute", right: 20, fontSize: 48, color: "white", background: "none", border: "none", cursor: "pointer" }}>

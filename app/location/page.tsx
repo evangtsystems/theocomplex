@@ -3,28 +3,34 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
-const locations = [
+
+
+export default function LocationPage() {
+
+  const t = useComponentTranslations("locationPage");
+
+  const locations = [
   {
-    name: "Villa Theo",
+    name: t.villaTheo,
     query: "39.4273063,19.9957696",
     mapsUrl:
       "https://www.google.com/maps/place/Villa+Theo/@39.4272638,19.9957461,55m/data=!3m1!1e3!4m15!1m5!3m4!2zMznCsDI1JzM4LjMiTiAxOcKwNTknNDQuOCJF!8m2!3d39.4273063!4d19.9957696!3m8!1s0x135c996a43164677:0x9a589f78910d86dc!5m2!4m1!1i2!8m2!3d39.4273063!4d19.9957696!16s%2Fg%2F11pz6mdz0v",
   },
   {
-    name: "Theo Apartment",
+    name: t.theoApartment,
     query: "39.4272542,19.9957417",
-    mapsUrl: "https://www.google.com/maps/place/Theo+apartment/@39.4271839,19.9955716,55m/data=!3m1!1e3!4m12!1m5!3m4!2zMznCsDI1JzM4LjEiTiAxOcKwNTknNDQuNyJF!8m2!3d39.4272542!4d19.9957417!3m5!1s0x135c990059471b47:0xf0ed7be58288e600!8m2!3d39.4272542!4d19.9957417!16s%2Fg%2F11y32mdwnk?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
+    mapsUrl:
+      "https://www.google.com/maps/place/Theo+apartment/@39.4271839,19.9955716,55m/data=!3m1!1e3!4m12!1m5!3m4!2zMznCsDI1JzM4LjEiTiAxOcKwNTknNDQuNyJF!8m2!3d39.4272542!4d19.9957417!3m5!1s0x135c990059471b47:0xf0ed7be58288e600!8m2!3d39.4272542!4d19.9957417!16s%2Fg%2F11y32mdwnk?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
   },
   {
-    name: "Theo Two-Bedroom Apartment with Loft",
+    name: t.theoTwoBedroomApartment,
     query: "Theo Two-Bedroom Apartment with Loft, Corfu",
     mapsUrl:
       "https://www.google.com/maps/place/Theo+Two-Bedroom+Apartment+with+Loft/@39.4272625,19.9957258,55m/data=!3m1!1e3!4m6!3m5!1s0x135c99007225d3a9:0x5c2578808c806e06!8m2!3d39.4272183!4d19.9955022!16s%2Fg%2F11yv_qpxc1?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
-
-export default function LocationPage() {
   const [selectedLocation, setSelectedLocation] = useState(locations[0]);
 
   return (
@@ -37,7 +43,7 @@ export default function LocationPage() {
         <section style={{ padding: "80px 24px" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "1.5px" }}>
-              LOCATION
+              {t.locationEyebrow}
             </p>
 
             <h1
@@ -49,9 +55,9 @@ export default function LocationPage() {
                 marginBottom: "25px",
               }}
             >
-              One Peaceful Location,
-              <br />
-              Three Unique Stays
+              {t.headingLine1}
+<br />
+{t.headingLine2}
             </h1>
 
             <p
@@ -62,10 +68,7 @@ export default function LocationPage() {
                 marginBottom: "45px",
               }}
             >
-              Villa Theo, Theo Apartment, and Theo Two-Bedroom Apartment with
-              Loft are located in the same building area, offering easy access
-              to nearby beaches, local restaurants, and Corfu’s beautiful
-              scenery.
+              {t.description}
             </p>
 
             <div
@@ -131,7 +134,7 @@ export default function LocationPage() {
                   </h3>
 
                   <p style={{ color: "#555", margin: 0 }}>
-                    Show on map →
+                    {t.showOnMap}
                   </p>
                 </button>
               ))}

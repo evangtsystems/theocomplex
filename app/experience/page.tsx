@@ -3,44 +3,51 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 
 
 
-const experiences = [
+
+
+export default function ExperiencePage() {
+
+  
+
+  const t = useComponentTranslations("experiencePage");
+
+  const experiences = [
   {
-    title: "Life on the Water",
-    kicker: "Boat Trips",
-    text: "Explore Corfu from the sea. Swim in crystal-clear waters, discover quiet bays, and enjoy the Ionian coastline from a completely different perspective.",
+    title: t.waterTitle,
+    kicker: t.waterKicker,
+    text: t.waterText,
     image: "/images/boattripl.webp",
   },
   {
-    title: "Authentic Greek Cuisine",
-    kicker: "Local Flavours",
-    text: "Fresh seafood, traditional dishes, local olive oil and warm Greek hospitality. Corfu is full of flavours that turn simple moments into memories.",
+    title: t.cuisineTitle,
+    kicker: t.cuisineKicker,
+    text: t.cuisineText,
     image: "/images/rouvelasdish.webp",
   },
   {
-    title: "Hiking Through Nature",
-    kicker: "Trails & Views",
-    text: "Walk through olive groves, coastal paths, old villages and scenic viewpoints. The island rewards those who slow down and explore.",
+    title: t.hikingTitle,
+    kicker: t.hikingKicker,
+    text: t.hikingText,
     image: "/images/hikingtrails.webp",
   },
   {
-    title: "Hidden Beaches & Coves",
-    kicker: "Hidden Gems",
-    text: "Beyond the famous beaches, Corfu hides peaceful coves, quiet corners and unforgettable views waiting to be discovered.",
+    title: t.beachesTitle,
+    kicker: t.beachesKicker,
+    text: t.beachesText,
     image: "/images/aigordis.webp",
   },
   {
-    title: "Wine, Culture & Sunset Moments",
-    kicker: "Island Evenings",
-    text: "Golden skies, village walks, local wine and relaxed summer evenings. Some moments in Corfu stay with you long after you leave.",
+    title: t.wineTitle,
+    kicker: t.wineKicker,
+    text: t.wineText,
     image: "/images/theocomplexwinel.webp",
   },
 ];
-
-export default function ExperiencePage() {
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -78,7 +85,7 @@ useEffect(() => {
                 marginBottom: "22px",
               }}
             >
-              Experience Corfu
+              {t.heroEyebrow}
             </p>
 
             <h1
@@ -90,9 +97,9 @@ useEffect(() => {
                 margin: 0,
               }}
             >
-              Beyond
-              <br />
-              the Ordinary.
+             {t.heroLine1}
+<br />
+{t.heroLine2}
             </h1>
 
             <p
@@ -103,8 +110,7 @@ useEffect(() => {
                 maxWidth: "580px",
               }}
             >
-              Golden beaches, hidden coves, mountain trails, authentic flavors
-              and unforgettable sunsets. Every day in Corfu offers a new story.
+              {t.heroText}
             </p>
           </div>
         </section>
@@ -198,7 +204,7 @@ padding: isMobile ? "55px 24px" : "80px 8%",
               fontWeight: 700,
             }}
           >
-            Your Corfu Story Starts Here
+            {t.ctaEyebrow}
           </p>
 
           <h2
@@ -209,7 +215,7 @@ padding: isMobile ? "55px 24px" : "80px 8%",
               margin: "18px 0 24px",
             }}
           >
-            Stay close to everything.
+            {t.ctaTitle}
           </h2>
 
           <p
@@ -221,8 +227,7 @@ padding: isMobile ? "55px 24px" : "80px 8%",
               fontSize: "1.05rem",
             }}
           >
-            Whether you seek relaxation, adventure, culture or unforgettable
-            moments by the sea, Theo Complex places you at the heart of Corfu.
+            {t.ctaText}
           </p>
 
           <Link
@@ -240,7 +245,7 @@ padding: isMobile ? "55px 24px" : "80px 8%",
               fontWeight: 700,
             }}
           >
-            Explore Apartments
+            {t.ctaButton}
           </Link>
         </section>
       </main>

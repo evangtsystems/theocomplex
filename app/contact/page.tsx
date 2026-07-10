@@ -3,7 +3,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 export default function ContactPage() {
+
+  const t = useComponentTranslations("contactPage");
   return (
     <>
       <div
@@ -43,7 +46,7 @@ export default function ContactPage() {
                 textTransform: "uppercase",
               }}
             >
-              Contact Us
+              {t.contactUs}
             </p>
 
             <h1
@@ -56,11 +59,11 @@ export default function ContactPage() {
                 color: "#1b1b1b",
               }}
             >
-              We'd Love
+              {t.headingLine1}
               <br />
-              to Hear
+              {t.headingLine2}
               <br />
-              From You
+              {t.headingLine3}
             </h1>
 
             <p
@@ -71,14 +74,12 @@ export default function ContactPage() {
                 marginBottom: "40px",
               }}
             >
-              Whether you have a question about one of our apartments,
-              availability, or your upcoming stay in Corfu, we're always happy
-              to help.
+              {t.introText}
             </p>
 
             <div style={{ lineHeight: 2.2 }}>
               <div>
-                <strong>Email</strong>
+                <strong>{t.email}</strong>
                 <br />
                 info@theocomplex.com
               </div>
@@ -86,17 +87,17 @@ export default function ContactPage() {
               <br />
 
               <div>
-                <strong>Location</strong>
+                <strong>{t.location}</strong>
                 <br />
-                Corfu, Greece
+                {t.corfuGreece}
               </div>
 
               <br />
 
               <div>
-                <strong>Response Time</strong>
+                <strong>{t.responseTime}</strong>
                 <br />
-                Usually within 24 hours
+                {t.usuallyWithin24Hours}
               </div>
             </div>
           </div>

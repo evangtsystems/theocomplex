@@ -38,16 +38,18 @@ export default function Footer() {
       >
         <div>
          <Image
-  src="/images/villateo.png"
+  src="/images/villateo.webp"
   alt="Corfu Escapes"
   width={180}
   height={70}
   className="logo"
-  style={{
-    width: isMobile ? "150px" : "180px",
-    height: "auto",
-    marginBottom: "20px",
-  }}
+ style={{
+  width: isMobile ? "170px" : "210px",
+  height: "auto",
+  marginBottom: "20px",
+  filter:
+    "drop-shadow(0 0 18px rgba(255,255,255,.95)) drop-shadow(0 0 40px rgba(255,255,255,.75))",
+}}
 />
 
           <p

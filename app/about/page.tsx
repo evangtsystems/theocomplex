@@ -1,7 +1,18 @@
+"use client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useComponentTranslations } from "@/i18n/useComponentTranslations";
 
 export default function AboutPage() {
+  const t = useComponentTranslations("aboutPage");
+
+  const stats = [
+  ["3", t.uniqueApartments],
+  ["10+", t.yearsOfHospitality],
+  ["5★", t.guestExperience],
+  [t.corfu, t.primeLocation],
+];
+
   return (
     <>
       <div
@@ -37,7 +48,7 @@ export default function AboutPage() {
               marginBottom: "15px",
             }}
           >
-            ABOUT US
+            {t.aboutUs}
           </p>
 
           <h1
@@ -49,9 +60,9 @@ export default function AboutPage() {
               marginBottom: "35px",
             }}
           >
-            Welcome to
+            {t.welcomeTo}
             <br />
-            Theo Apartments
+            {t.theoApartments}
           </h1>
 
           <div
@@ -65,7 +76,7 @@ export default function AboutPage() {
             <div>
               <img
                 src="/images/villateo.webp"
-                alt="Theo Apartments"
+               alt={t.imageAlt}
                 style={{
                   width: "100%",
                   maxWidth: "420px",
@@ -84,9 +95,7 @@ export default function AboutPage() {
                   marginBottom: "25px",
                 }}
               >
-                Theo Apartments is a collection of three carefully designed
-                holiday accommodations located in one of Corfu's most peaceful
-                areas.
+               {t.introParagraph}
               </p>
 
               <p
@@ -97,10 +106,7 @@ export default function AboutPage() {
                   marginBottom: "25px",
                 }}
               >
-                Whether you choose the spacious Villa Theo, the stylish
-                Two-Bedroom Apartment with Loft, or the charming Apartment with
-                Balcony, every stay has been designed to provide comfort,
-                privacy, and an authentic Corfu experience.
+                {t.apartmentsParagraph}
               </p>
 
               <p
@@ -110,11 +116,7 @@ export default function AboutPage() {
                   fontSize: "1.05rem",
                 }}
               >
-                Just minutes from beautiful beaches, traditional villages and
-                Corfu Town, Theo Apartments offers the perfect balance between
-                relaxation and exploration. We look forward to welcoming you and
-                helping you create unforgettable memories on our beautiful
-                island.
+                {t.locationParagraph}
               </p>
             </div>
           </div>
@@ -127,12 +129,7 @@ export default function AboutPage() {
               gap: "25px",
             }}
           >
-            {[
-              ["3", "Unique Apartments"],
-              ["10+", "Years of Hospitality"],
-              ["5★", "Guest Experience"],
-              ["Corfu", "Prime Location"],
-            ].map(([number, text]) => (
+            {stats.map(([number, text]) => (
               <div
                 key={text}
                 style={{

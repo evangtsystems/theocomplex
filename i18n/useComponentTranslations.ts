@@ -31,6 +31,23 @@ import elLifestyleSection from "./resources/el/lifestyleSection.json";
 
 import enFooter from "./resources/en/footer.json";
 import elFooter from "./resources/el/footer.json";
+
+import enExperiencePage from "./resources/en/experiencePage.json";
+import elExperiencePage from "./resources/el/experiencePage.json";
+
+import enLocationPage from "./resources/en/locationPage.json";
+import elLocationPage from "./resources/el/locationPage.json";
+
+import enGalleryPage from "./resources/en/galleryPage.json";
+import elGalleryPage from "./resources/el/galleryPage.json";
+
+import enAboutPage from "./resources/en/aboutPage.json";
+import elAboutPage from "./resources/el/aboutPage.json";
+
+import enContactPage from "./resources/en/contactPage.json";
+import elContactPage from "./resources/el/contactPage.json";
+
+
 const dictionaries = {
   en: {
     hero: enHero,
@@ -43,6 +60,11 @@ const dictionaries = {
     experienceSection: enExperienceSection,
     lifestyleSection: enLifestyleSection,
     footer: enFooter,
+    experiencePage: enExperiencePage,
+    locationPage: enLocationPage,
+    galleryPage: enGalleryPage,
+    aboutPage: enAboutPage,
+    contactPage: enContactPage,
   },
   el: {
     hero: elHero,
@@ -55,6 +77,11 @@ const dictionaries = {
     experienceSection: elExperienceSection,
     lifestyleSection: elLifestyleSection,
     footer: elFooter,
+    experiencePage: elExperiencePage,
+    locationPage: elLocationPage,
+    galleryPage: elGalleryPage,
+    aboutPage: elAboutPage,
+    contactPage: elContactPage,
   },
 };
 
