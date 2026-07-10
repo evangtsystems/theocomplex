@@ -126,7 +126,7 @@ useEffect(() => {
               position: "relative",
               borderRadius: "4px",
               overflow: "hidden",
-            backgroundImage: `url('${card.image}')`,
+            backgroundImage: `url('${card.image}?v=${version}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
