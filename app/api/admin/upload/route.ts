@@ -10,6 +10,11 @@ export async function POST(request: Request) {
     const password = formData.get("password");
     const slot = formData.get("slot");
     const file = formData.get("file") as File | null;
+    console.log("UPLOAD DEBUG:", {
+  name: file?.name,
+  type: file?.type,
+  size: file?.size,
+});
 
     if (password !== process.env.ADMIN_UPLOAD_PASSWORD) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -35,6 +40,10 @@ export async function POST(request: Request) {
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    console.log(
+  "UPLOAD HEADER:",
+  buffer.subarray(0, 32).toString("hex")
+);
 
     const uploadDir = path.join(
       process.cwd(),
