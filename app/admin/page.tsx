@@ -13,23 +13,83 @@ export default function AdminPage() {
     setMessage("");
 
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const fileInput = form.elements.namedItem("file") as HTMLInputElement;
+    let file = fileInput.files?.[0];
+
+    if (!file) {
+      setMessage("❌ No image selected.");
+      setUploading(false);
+      return;
+    }
 
     try {
+      const isHeic =
+        file.type === "image/heic" ||
+        file.type === "image/heif" ||
+        /\.hei[cf]$/i.test(file.name);
+
+      if (isHeic) {
+        setMessage("⏳ Converting iPhone image...");
+
+        const { default: heic2any } = await import("heic2any");
+
+        const converted = await heic2any({
+          blob: file,
+          toType: "image/jpeg",
+          quality: 0.9,
+        });
+
+        const convertedBlob = Array.isArray(converted)
+          ? converted[0]
+          : converted;
+
+        const convertedName = file.name.replace(/\.hei[cf]$/i, ".jpg");
+
+        file = new File([convertedBlob], convertedName, {
+          type: "image/jpeg",
+        });
+      }
+
+      const data = new FormData(form);
+      data.set("file", file);
+
+      setMessage("⏳ Uploading image...");
+
       const res = await fetch("/api/admin/upload", {
         method: "POST",
         body: data,
       });
 
-      const result = await res.json();
+      const responseText = await res.text();
 
-      if (result.success) {
-        setMessage("✅ Upload completed successfully!");
-      } else {
-        setMessage(`❌ ${result.error}`);
+      let result: {
+        success?: boolean;
+        error?: string;
+        details?: string;
+      } = {};
+
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        // The response may be HTML or plain text.
       }
-    } catch {
-      setMessage("❌ Upload failed.");
+
+      if (res.ok && result.success) {
+        setMessage("✅ Upload completed successfully!");
+        form.reset();
+      } else {
+        const errorMessage =
+          result.details ||
+          result.error ||
+          `Upload failed with status ${res.status}`;
+
+        setMessage(`❌ ${errorMessage}`);
+      }
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown upload error";
+
+      setMessage(`❌ Upload failed: ${errorMessage}`);
     } finally {
       setUploading(false);
     }
@@ -71,19 +131,24 @@ export default function AdminPage() {
             name="password"
             type="password"
             placeholder="Password"
+            required
             style={{
               width: "100%",
               padding: 12,
               marginBottom: 18,
+              boxSizing: "border-box",
             }}
           />
 
           <select
             name="slot"
+            required
+            defaultValue="lifestyle-1"
             style={{
               width: "100%",
               padding: 12,
               marginBottom: 18,
+              boxSizing: "border-box",
             }}
           >
             <option value="lifestyle-1">Lifestyle 1</option>
@@ -95,7 +160,7 @@ export default function AdminPage() {
           <input
             type="file"
             name="file"
-            accept="image/*"
+            accept="image/*,.heic,.heif"
             required
             style={{
               width: "100%",
@@ -118,28 +183,18 @@ export default function AdminPage() {
               fontWeight: 600,
             }}
           >
-            {uploading ? "Uploading..." : "Upload Image"}
+            {uploading ? "Processing..." : "Upload Image"}
           </button>
         </form>
-
-        {uploading && (
-          <p
-            style={{
-              marginTop: 18,
-              textAlign: "center",
-              color: "#666",
-            }}
-          >
-            ⏳ Processing image... Please wait.
-          </p>
-        )}
 
         {message && (
           <p
             style={{
               marginTop: 18,
+              marginBottom: 0,
               textAlign: "center",
               fontWeight: 600,
+              lineHeight: 1.5,
             }}
           >
             {message}
