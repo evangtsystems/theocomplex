@@ -23,13 +23,19 @@ export default function AdminPage() {
     }
 
     try {
+      const headerBuffer = await file.slice(0, 32).arrayBuffer();
+      const header = new TextDecoder("latin1").decode(headerBuffer);
+
       const isHeic =
-        file.type === "image/heic" ||
-        file.type === "image/heif" ||
-        /\.hei[cf]$/i.test(file.name);
+        header.includes("ftypheic") ||
+        header.includes("ftypheix") ||
+        header.includes("ftyphevc") ||
+        header.includes("ftyphevx") ||
+        header.includes("ftypmif1") ||
+        header.includes("ftypmsf1");
 
       if (isHeic) {
-        setMessage("⏳ Converting iPhone image...");
+        setMessage("⏳ Converting phone image...");
 
         const { default: heic2any } = await import("heic2any");
 
@@ -43,9 +49,9 @@ export default function AdminPage() {
           ? converted[0]
           : converted;
 
-        const convertedName = file.name.replace(/\.hei[cf]$/i, ".jpg");
+        const baseName = file.name.replace(/\.[^.]+$/, "");
 
-        file = new File([convertedBlob], convertedName, {
+        file = new File([convertedBlob], `${baseName}.jpg`, {
           type: "image/jpeg",
         });
       }
@@ -71,7 +77,7 @@ export default function AdminPage() {
       try {
         result = JSON.parse(responseText);
       } catch {
-        // The response may be HTML or plain text.
+        // Response was not JSON.
       }
 
       if (res.ok && result.success) {
